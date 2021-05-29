@@ -5,11 +5,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 
-class DefaultController extends AbstractController
+class StoreController extends AbstractController
 {
 
-    public function index()
+    public function index($store)
     {
-        return $this->render("base/store.html.twig", ["homepage" => "my home page"]);
+        return $this->render($store."/store.html.twig", ["store" => $store]);
     }
 }
